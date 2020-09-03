@@ -27,3 +27,13 @@ def mergeSort(A, aux, left, right):
     mid = (left + right) // 2
 
     mergeSort(A, aux, left, mid)
+
+    mergeSort(A, aux, mid + 1, right)
+
+    merge(A, aux, left, mid, right)
+
+A = [9 , 10 , -1, 3, 6, 2, 1, -3, 1, 0, -2, 15, 8, -7, 0]
+print("Vetor original: ", A)
+aux = [0] * len(A)
+mergeSort(A, aux, 0, len(A) - 1)
+print("Vetor ordenado:", A)
